@@ -1,15 +1,29 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+			xmlns:l="sap.ui.layout"
 		controllerName="zcoronaapp.main" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="COVID-19 Cases Status - INDIA">
 		<content>
-			<Table id="idProductsTable" inset="false" items="{statewise}/">
-								<headerToolbar>
-									<OverflowToolbar>
-										<content>
-											<SearchField id="searchField" width="100%" placeholder="Search by States" liveChange=".onSearch"/>
-										</content>
-									</OverflowToolbar>
-								</headerToolbar>
+			<l:Grid containerQuery="true" class="GridAlign">
+				<TileContent footer="Active Cases" class="Active">
+					<NumericContent value="{oModel>/statewise/0/active}" truncateValueTo="10" icon="images/iconss.png" />
+				</TileContent>
+				<TileContent footer="Confirmed Case" class="Confirmed">
+					<NumericContent value="{oModel>/statewise/0/confirmed}" truncateValueTo="10" icon="images/iconss1.png" />
+				</TileContent>
+				<TileContent footer="Number of Death" class="Death">
+					<NumericContent value="{oModel>/statewise/0/deaths}" truncateValueTo="10" icon="images/iconss2.png" />
+				</TileContent>
+				<TileContent footer="Recovered" class="Recovered">
+					<NumericContent value="{oModel>/statewise/0/recovered}" truncateValueTo="10" icon="images/iconss3.png" />
+				</TileContent>
+			</l:Grid>
+			<Bar>
+				<contentLeft>
+					<SearchField id="searchField" width="100%" placeholder="Search by States" liveChange=".onSearch"/>
+				</contentLeft>
+			</Bar>
+			<Table id="idProductsTable" inset="false" items="{oModel>/statewise}">
+								
 								<columns>
 									<Column width="12em">
 										<Text text="State"/>
@@ -33,12 +47,12 @@
 								<items>
 									<ColumnListItem>
 										<cells>
-											<Text text="{state}"/>
-											<Text text="{active}"/>
-											<Text text="{confirmed}"/>
-											<Text text="{recovered}"/>
-											<Text text="{deaths}"/>
-											<Text text="{lastupdatedtime}"/>
+											<Text text="{oModel>state}"/>
+											<Text text="{oModel>active}"/>
+											<Text text="{oModel>confirmed}"/>
+											<Text text="{oModel>recovered}"/>
+											<Text text="{oModel>deaths}"/>
+											<Text text="{oModel>lastupdatedtime}"/>
 										</cells>
 									</ColumnListItem>
 								</items>

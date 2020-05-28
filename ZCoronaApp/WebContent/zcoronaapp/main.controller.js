@@ -7,7 +7,7 @@ sap.ui.controller("zcoronaapp.main", {
 */
 	onInit: function() {
 
-		var oView = this.getView();
+		/* var oView = this.getView();
 		
 		//Accessing the table from the fragment by it's Id	
 			var oTable = this.byId("idProductsTable");
@@ -37,7 +37,20 @@ sap.ui.controller("zcoronaapp.main", {
 			oTable.bindAggregation("items", {
 				path: "/statewise",
 				template: oTemplate
-			});
+			}); */
+		
+		var oView = this.getView();
+		var oData = $.ajax({
+			type: "GET",
+			url: "https://api.covid19india.org/data.json",
+			async: false,
+			dataType: "json",
+			
+			success: function(data, textStatus, jqXHR){
+				var oModel = new sap.ui.model.json.JSONModel(data);
+				oView.setModel(oModel, "oModel");
+			}
+		});
 	},
 
 	onSearch: function (evt) {

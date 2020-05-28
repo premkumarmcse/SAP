@@ -6,42 +6,30 @@ sap.ui.core.UIComponent.extend("sap.eim.SalesOrderApproval.Component", {
 	
 	
 	metadata : {
-		rootView : "sap.eim.SalesOrderApproval.view.Login",
+		rootView : "ZCoronaApp.view.main",
+		"config" : {
+			"fullWidth": true
+		},
 		routing : {
 			config : {
 				targetsClass : "sap.m.routing.Router",
-				viewPath : "sap.eim.SalesOrderApproval.view",
+				viewPath : "ZCoronaApp.view",
 				controlId : "rootControl",
 				controlAggregation : "pages",
 				viewType : "XML"
 			},
 			routes: [
-				
 				{
-					name: "login",
+					name: "main",
 					pattern: "",
 					target: "page1"
-				},
-				{
-					name: "Report",
-					pattern: "Report",
-					target: "page2"
-				}
-						
-							
+				},				
 					],
 			targets : {
-				
-			
 				page1 : {
-					viewName : "Login",
+					viewName : "main",
 					viewLevel : 0
-				},
-				page2 : {
-					viewName : "Report",
-					viewLevel : 1
 				}
-				
 			}
 		}
 	},
@@ -61,8 +49,8 @@ sap.ui.core.UIComponent.extend("sap.eim.SalesOrderApproval.Component", {
 	createContent : function() {
 		var oView = sap.ui.view({
 		id : "app",
-		viewName : "sap.eim.SalesOrderApproval.view.App",
-		url:"sap.eim.SalesOrderApproval.view.App",
+		viewName : "ZCoronaApp.view.main",
+		url:"ZCoronaApp.view.main",
 		type : "XML",
 		viewData : { component : this }
 		});
