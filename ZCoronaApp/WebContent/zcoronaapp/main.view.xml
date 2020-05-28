@@ -47,11 +47,11 @@
 								<items>
 									<ColumnListItem>
 										<cells>
-											<Text text="{oModel>state}"/>
+											<Label text="{oModel>state}" design="Bold" wrapping="true"/>
 											<Text text="{oModel>active}"/>
-											<Text text="{oModel>confirmed}"/>
+											<ObjectNumber number="{oModel>confirmed}" state="Success"/>
 											<Text text="{oModel>recovered}"/>
-											<Text text="{oModel>deaths}"/>
+											<ObjectNumber number="{oModel>deaths}" state="Error"/>
 											<Text text="{oModel>lastupdatedtime}"/>
 										</cells>
 									</ColumnListItem>
