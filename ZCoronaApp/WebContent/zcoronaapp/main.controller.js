@@ -6,38 +6,6 @@ sap.ui.controller("zcoronaapp.main", {
 * @memberOf zcoronaapp.main
 */
 	onInit: function() {
-
-		/* var oView = this.getView();
-		
-		//Accessing the table from the fragment by it's Id	
-			var oTable = this.byId("idProductsTable");
-	
-		//column list item creation
-			var oTemplate = new sap.m.ColumnListItem({
-				cells: [new sap.m.Text({
-					text: "{state}"
-				}), new sap.m.Text({
-					text: "{active}"
-				}), new sap.m.Text({
-					text: "{confirmed}"
-				}), new sap.m.Text({
-					text: "{recovered}"
-				}), new sap.m.Text({
-					text: "{deaths}"
-				}), new sap.m.Text({
-					text: "{lastupdatedtime}"
-				})]
-			});
-				
-		//Setting model to the table
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("https://api.covid19india.org/data.json");
-			sap.ui.getCore().setModel(oModel);
-			oTable.setModel(oModel);
-			oTable.bindAggregation("items", {
-				path: "/statewise",
-				template: oTemplate
-			}); */
 		
 		var oView = this.getView();
 		var oData = $.ajax({

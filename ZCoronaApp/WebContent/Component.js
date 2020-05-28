@@ -1,7 +1,5 @@
  var oloadData = null ;
-jQuery.sap.declare("sap.eim.SalesOrderApproval.Component");
-jQuery.sap.require("sap.eim.SalesOrderApproval.util.Formatter");
-sap.ui.core.UIComponent.extend("sap.eim.SalesOrderApproval.Component", {
+sap.ui.core.UIComponent.extend("", {
 
 	
 	
