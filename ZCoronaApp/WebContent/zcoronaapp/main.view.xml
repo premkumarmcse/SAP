@@ -1,0 +1,48 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="zcoronaapp.main" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="COVID-19 Cases Status - INDIA">
+		<content>
+			<Table id="idProductsTable" inset="false" items="{statewise}/">
+								<headerToolbar>
+									<OverflowToolbar>
+										<content>
+											<SearchField id="searchField" width="100%" placeholder="Search by States" liveChange=".onSearch"/>
+										</content>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="12em">
+										<Text text="State"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="Active Cases"/>
+									</Column>
+									<Column minScreenWidth="50px" demandPopin="true" hAlign="Initial">
+										<Text text="Confirmed Cases"/>
+									</Column>
+									<Column minScreenWidth="700px" demandPopin="true" hAlign="Initial">
+										<Text text="Recovered"/>
+									</Column>
+									<Column minScreenWidth="800px" demandPopin="true" hAlign="Left">
+										<Text text="Death Cases"/>
+									</Column>
+									<Column minScreenWidth="1000px" demandPopin="true" hAlign="End">
+										<Text text="Last Updated"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{state}"/>
+											<Text text="{active}"/>
+											<Text text="{confirmed}"/>
+											<Text text="{recovered}"/>
+											<Text text="{deaths}"/>
+											<Text text="{lastupdatedtime}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+		</content>
+	</Page>
+</core:View>
