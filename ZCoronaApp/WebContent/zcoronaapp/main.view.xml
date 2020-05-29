@@ -1,21 +1,29 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 			xmlns:l="sap.ui.layout"
 		controllerName="zcoronaapp.main" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="COVID-19 Cases Status - INDIA">
+	<Page title="COVID-19 Report - INDIA">
 		<content>
 			<l:Grid containerQuery="true" class="GridAlign">
-				<TileContent footer="Active Cases" class="Active">
+			<CustomTile class="Active">
+				<TileContent footer="Active Cases" alignContent="Center">
 					<NumericContent value="{oModel>/statewise/0/active}" truncateValueTo="10" icon="images/iconss.png" />
 				</TileContent>
+			</CustomTile>
+			<CustomTile class="Confirmed" alignContent="Center">
 				<TileContent footer="Confirmed Case" class="Confirmed">
 					<NumericContent value="{oModel>/statewise/0/confirmed}" truncateValueTo="10" icon="images/iconss1.png" />
 				</TileContent>
+			</CustomTile>
+			<CustomTile class="Death" FlexAlignContent="SpaceBetween">
 				<TileContent footer="Number of Death" class="Death">
 					<NumericContent value="{oModel>/statewise/0/deaths}" truncateValueTo="10" icon="images/iconss2.png" />
 				</TileContent>
+			</CustomTile>
+			<CustomTile class="Recovered" FlexAlignContent="SpaceBetween">
 				<TileContent footer="Recovered" class="Recovered">
 					<NumericContent value="{oModel>/statewise/0/recovered}" truncateValueTo="10" icon="images/iconss3.png" />
 				</TileContent>
+			</CustomTile>
 			</l:Grid>
 			<Bar>
 				<contentLeft>
